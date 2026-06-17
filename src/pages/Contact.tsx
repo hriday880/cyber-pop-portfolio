@@ -3,16 +3,35 @@ import { useState } from 'react';
 export default function Contact() {
   const [btnState, setBtnState] = useState<'idle' | 'sending' | 'sent'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setBtnState('sending');
-    setTimeout(() => {
-      setBtnState('sent');
-      setTimeout(() => {
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    formData.append("access_key", "1693c959-1d16-47bf-bb6a-fcbd2e99b988");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setBtnState('sent');
+        setTimeout(() => {
+          setBtnState('idle');
+          form.reset();
+        }, 2000);
+      } else {
+        console.error("Form submission failed:", data);
         setBtnState('idle');
-        (e.target as HTMLFormElement).reset();
-      }, 2000);
-    }, 1500);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setBtnState('idle');
+    }
   };
 
   const btnText = btnState === 'sending' ? 'TRANSMITTING...' : btnState === 'sent' ? 'SIGNAL SENT ✓' : 'Initialize Transmission';
@@ -54,6 +73,8 @@ export default function Contact() {
                     Full Name
                   </label>
                   <input
+                    name="name"
+                    required
                     className="w-full bg-[#f3f4f5] dark:bg-[#111318] border border-[#e1e3e4] dark:border-[#3b494b] focus:border-[#006877] dark:focus:border-[#00dbe9] focus:ring-0 outline-none transition-all font-['Geist',sans-serif] text-[14px] p-3 placeholder:text-[#bac9cd] dark:placeholder:text-[#3b494b] text-[#191c1d] dark:text-[#e2e2e8]"
                     placeholder="ALEX RIVERA"
                     type="text"
@@ -64,6 +85,8 @@ export default function Contact() {
                     Email Address
                   </label>
                   <input
+                    name="email"
+                    required
                     className="w-full bg-[#f3f4f5] dark:bg-[#111318] border border-[#e1e3e4] dark:border-[#3b494b] focus:border-[#006877] dark:focus:border-[#00dbe9] focus:ring-0 outline-none transition-all font-['Geist',sans-serif] text-[14px] p-3 placeholder:text-[#bac9cd] dark:placeholder:text-[#3b494b] text-[#191c1d] dark:text-[#e2e2e8]"
                     placeholder="ALEX@STUDIO.TECH"
                     type="email"
@@ -76,12 +99,14 @@ export default function Contact() {
                   Subject
                 </label>
                 <select
+                  name="subject"
+                  required
                   className="w-full bg-[#f3f4f5] dark:bg-[#111318] border border-[#e1e3e4] dark:border-[#3b494b] focus:border-[#006877] dark:focus:border-[#00dbe9] focus:ring-0 outline-none transition-all font-['Geist',sans-serif] text-[14px] p-3 text-[#191c1d] dark:text-[#e2e2e8]"
                 >
-                  <option>Project Collaboration</option>
-                  <option>Speaking Engagement</option>
-                  <option>Consultancy</option>
-                  <option>Other</option>
+                  <option value="Project Collaboration">Project Collaboration</option>
+                  <option value="Speaking Engagement">Speaking Engagement</option>
+                  <option value="Consultancy">Consultancy</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
@@ -90,6 +115,8 @@ export default function Contact() {
                   Your Message
                 </label>
                 <textarea
+                  name="message"
+                  required
                   className="w-full bg-[#f3f4f5] dark:bg-[#111318] border border-[#e1e3e4] dark:border-[#3b494b] focus:border-[#006877] dark:focus:border-[#00dbe9] focus:ring-0 outline-none transition-all font-['Geist',sans-serif] text-[14px] p-3 placeholder:text-[#bac9cd] dark:placeholder:text-[#3b494b] text-[#191c1d] dark:text-[#e2e2e8] resize-none"
                   placeholder="DESCRIBE THE VISION..."
                   rows={6}
