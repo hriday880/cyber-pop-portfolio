@@ -56,6 +56,7 @@ export default function Work() {
       ============================== */}
       <div className="grid grid-cols-12 gap-5">
         {/* FEATURED CARD (Wide) - DOTSLASH */}
+        {(activeFilter === 'ALL_SYSTEMS' || activeFilter === 'react') && (
         <Link to="/work/dotslash" className="col-span-12 md:col-span-8 group relative bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all overflow-hidden h-[400px] block">
           <div
             className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-20 group-hover:opacity-100"
@@ -79,8 +80,10 @@ export default function Work() {
             </div>
           </div>
         </Link>
+        )}
 
         {/* HARDWARE CARD */}
+        {(activeFilter === 'ALL_SYSTEMS' || activeFilter === 'hardware') && (
         <Link to="/work/lie-detector" className="col-span-12 md:col-span-4 group relative bg-[#edeeef] dark:bg-[#1e2024] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#a90097] dark:hover:border-[#ff24e4] transition-all overflow-hidden h-[400px] block">
           <div className="p-6 flex flex-col h-full">
             <div className="mb-auto">
@@ -98,8 +101,10 @@ export default function Work() {
             <div className="w-20 h-20 border-t-2 border-r-2 border-[#a90097] dark:border-[#ff24e4]"></div>
           </div>
         </Link>
+        )}
 
         {/* AUTOMATION (Vertical tall) */}
+        {(activeFilter === 'ALL_SYSTEMS' || activeFilter === 'n8n') && (
         <div className="col-span-12 md:col-span-4 group bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#24ec00] dark:hover:border-[#2ae500] transition-all overflow-hidden h-[500px]">
           <div className="h-[55%] overflow-hidden">
             <img
@@ -121,8 +126,10 @@ export default function Work() {
             </Link>
           </div>
         </div>
+        )}
 
         {/* SCREENPLAY GEN */}
+        {(activeFilter === 'ALL_SYSTEMS' || activeFilter === 'creative') && (
         <Link to="/work/screenplay" className="col-span-12 md:col-span-8 group bg-[#f3f4f5] dark:bg-[#1e2024] border border-[#e1e3e4] dark:border-[#3b494b] p-6 relative h-[500px] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all block">
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-start mb-8">
@@ -157,6 +164,7 @@ export default function Work() {
             </div>
           </div>
         </Link>
+        )}
 
         <div className="col-span-12 md:col-span-4 group bg-[#191c1d] dark:bg-[#0c0e12] p-6 flex flex-col justify-center items-center text-center gap-4 h-[240px] border border-[#191c1d] dark:border-[#3b494b]">
           <span className="material-symbols-outlined text-[#00e0ff] dark:text-[#00dbe9] text-[48px]">cloud_done</span>
