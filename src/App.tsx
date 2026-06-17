@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import Dispatch from './pages/Dispatch';
+import ProjectDetail from './pages/ProjectDetail';
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="work" element={<Work />} />
+          <Route path="work/:id" element={<ProjectDetail />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="dispatch" element={<Dispatch />} />
         </Route>
       </Routes>
     </HashRouter>

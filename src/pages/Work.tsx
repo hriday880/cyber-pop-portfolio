@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState('ALL_SYSTEMS');
@@ -54,8 +55,8 @@ export default function Work() {
           BENTO GRID
       ============================== */}
       <div className="grid grid-cols-12 gap-5">
-        {/* FEATURED CARD (Wide) */}
-        <div className="col-span-12 md:col-span-8 group relative bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all overflow-hidden h-[400px]">
+        {/* FEATURED CARD (Wide) - DOTSLASH */}
+        <Link to="/work/dotslash" className="col-span-12 md:col-span-8 group relative bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all overflow-hidden h-[400px] block">
           <div
             className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-20 group-hover:opacity-100"
             style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBOhPyBBJ5Foa8xx7PlsdKz5Jx_dzy-yEbn2sa4npI6Zz--U1AB9m98Fmdv_ThYTV5hxUgtpykBX6C6J3rLugyGchFZfZoIJCqWrgIyWiIEetWTHXhC7nQzQXKEi7z6Jp3o1dnzI9T5keFzzQ3Ubl4Zn9X__GAYlqCaInFanob6NXrMX20TkTu9tluxi2c9F_a-553Z6Phwnnp7dR3xw9ryY_q3S3ZJpG4TpJgATsQ6ZPP4staOmBtgV50iuEYSNZ-4nLtJtkrU81lf')" }}
@@ -77,10 +78,10 @@ export default function Work() {
               <span className="font-['JetBrains_Mono'] text-[11px] uppercase text-[#006877] dark:text-[#00dbe9] font-bold tracking-widest">Launch Interface</span>
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* HARDWARE CARD */}
-        <div className="col-span-12 md:col-span-4 group relative bg-[#edeeef] dark:bg-[#1e2024] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#a90097] dark:hover:border-[#ff24e4] transition-all overflow-hidden h-[400px]">
+        <Link to="/work/lie-detector" className="col-span-12 md:col-span-4 group relative bg-[#edeeef] dark:bg-[#1e2024] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#a90097] dark:hover:border-[#ff24e4] transition-all overflow-hidden h-[400px] block">
           <div className="p-6 flex flex-col h-full">
             <div className="mb-auto">
               <span className="material-symbols-outlined text-[#a90097] dark:text-[#fface8] text-[48px]" style={{ fontVariationSettings: "'FILL' 1" }}>biotech</span>
@@ -96,7 +97,7 @@ export default function Work() {
           <div className="absolute top-0 right-0 p-3 transform translate-x-12 -translate-y-12 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300">
             <div className="w-20 h-20 border-t-2 border-r-2 border-[#a90097] dark:border-[#ff24e4]"></div>
           </div>
-        </div>
+        </Link>
 
         {/* AUTOMATION (Vertical tall) */}
         <div className="col-span-12 md:col-span-4 group bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] hover:border-[#24ec00] dark:hover:border-[#2ae500] transition-all overflow-hidden h-[500px]">
@@ -115,14 +116,14 @@ export default function Work() {
               <h3 className="font-['Space_Grotesk'] text-[24px] font-semibold text-[#191c1d] dark:text-[#e2e2e8]" style={{ letterSpacing: '-0.02em' }}>SYNC_N8N</h3>
             </div>
             <p className="font-['Geist',sans-serif] text-[13px] text-[#3b494c] dark:text-[#b9cacb]">Complex orchestration of 40+ microservices for autonomous content generation.</p>
-            <button className="w-full bg-[#191c1d] dark:bg-black text-[#79ff5b] dark:text-[#79ff5b] py-2 font-['JetBrains_Mono'] text-[11px] uppercase tracking-widest border-b-2 border-[#24ec00] dark:border-[#2ae500] group-hover:bg-[#0c6e00] dark:group-hover:bg-[#0c6e00] group-hover:text-white transition-all">
+          <Link to="/work/n8n" className="w-full block bg-[#191c1d] dark:bg-black text-[#79ff5b] dark:text-[#79ff5b] py-2 font-['JetBrains_Mono'] text-[11px] uppercase tracking-widest text-center border-b-2 border-[#24ec00] dark:border-[#2ae500] group-hover:bg-[#0c6e00] dark:group-hover:bg-[#0c6e00] group-hover:text-white transition-all">
               View Flowchart
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* SCREENPLAY GEN */}
-        <div className="col-span-12 md:col-span-8 group bg-[#f3f4f5] dark:bg-[#1e2024] border border-[#e1e3e4] dark:border-[#3b494b] p-6 relative h-[500px] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all">
+        <Link to="/work/screenplay" className="col-span-12 md:col-span-8 group bg-[#f3f4f5] dark:bg-[#1e2024] border border-[#e1e3e4] dark:border-[#3b494b] p-6 relative h-[500px] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all block">
           <div className="flex flex-col h-full">
             <div className="flex justify-between items-start mb-8">
               <div className="flex flex-col">
@@ -155,9 +156,8 @@ export default function Work() {
               <span className="font-['JetBrains_Mono'] text-[11px] text-[#6b7a7d] dark:text-[#849495]">STARS: 124</span>
             </div>
           </div>
-        </div>
+        </Link>
 
-        {/* STATUS CARD */}
         <div className="col-span-12 md:col-span-4 group bg-[#191c1d] dark:bg-[#0c0e12] p-6 flex flex-col justify-center items-center text-center gap-4 h-[240px] border border-[#191c1d] dark:border-[#3b494b]">
           <span className="material-symbols-outlined text-[#00e0ff] dark:text-[#00dbe9] text-[48px]">cloud_done</span>
           <h4 className="font-['JetBrains_Mono'] text-white dark:text-[#e2e2e8] tracking-[0.2em] text-[12px] uppercase">ALL_SYSTEMS_OPERATIONAL</h4>
@@ -165,21 +165,21 @@ export default function Work() {
         </div>
 
         {/* PROCESS CARD */}
-        <div className="col-span-12 md:col-span-4 group bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] p-6 h-[240px] flex flex-col justify-between hover:bg-[#f3f4f5] dark:hover:bg-[#282a2e] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all">
+        <Link to="/about" className="col-span-12 md:col-span-4 group bg-white dark:bg-[#1a1c20] border border-[#e1e3e4] dark:border-[#3b494b] p-6 h-[240px] flex flex-col justify-between hover:bg-[#f3f4f5] dark:hover:bg-[#282a2e] hover:border-[#006877] dark:hover:border-[#00dbe9] transition-all block">
           <span className="font-['JetBrains_Mono'] text-[11px] text-[#006877] dark:text-[#00dbe9] uppercase tracking-widest">01 // PROCESS</span>
           <p className="font-['Geist',sans-serif] text-[14px] text-[#191c1d] dark:text-[#e2e2e8]">Our methodology centers on rigorous testing and brutalist simplicity.</p>
           <div className="flex justify-end">
             <span className="material-symbols-outlined text-[#191c1d] dark:text-[#e2e2e8] group-hover:translate-x-2 transition-transform duration-300">east</span>
           </div>
-        </div>
+        </Link>
 
         {/* QUICK CONTACT */}
         <div className="col-span-12 md:col-span-4 group bg-[#e1e3e4] dark:bg-[#333539] border border-[#e1e3e4] dark:border-[#3b494b] p-6 h-[240px] flex flex-col justify-between overflow-hidden relative">
           <h3 className="font-['Space_Grotesk'] text-[52px] font-bold opacity-10 absolute -bottom-3 -left-3 text-[#191c1d] dark:text-[#e2e2e8] leading-none pointer-events-none">LAB</h3>
           <span className="font-['JetBrains_Mono'] text-[11px] uppercase text-[#6b7a7d] dark:text-[#849495] tracking-widest z-10">Quick Contact</span>
           <div className="flex flex-col gap-2 z-10">
-            <a className="font-['JetBrains_Mono'] text-[11px] text-[#191c1d] dark:text-[#e2e2e8] hover:text-[#006877] dark:hover:text-[#7df4ff] underline tracking-widest transition-colors" href="#">GITHUB_REPO</a>
-            <a className="font-['JetBrains_Mono'] text-[11px] text-[#191c1d] dark:text-[#e2e2e8] hover:text-[#006877] dark:hover:text-[#7df4ff] underline tracking-widest transition-colors" href="#">DOCUMENTATION</a>
+            <a className="font-['JetBrains_Mono'] text-[11px] text-[#191c1d] dark:text-[#e2e2e8] hover:text-[#006877] dark:hover:text-[#7df4ff] underline tracking-widest transition-colors" href="https://github.com/hriday880" target="_blank" rel="noopener noreferrer">GITHUB_REPO</a>
+            <Link className="font-['JetBrains_Mono'] text-[11px] text-[#191c1d] dark:text-[#e2e2e8] hover:text-[#006877] dark:hover:text-[#7df4ff] underline tracking-widest transition-colors" to="/dispatch">DOCUMENTATION</Link>
           </div>
         </div>
       </div>

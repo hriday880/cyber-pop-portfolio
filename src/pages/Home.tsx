@@ -164,6 +164,7 @@ export default function Home() {
                 title: 'Workflow Automation',
                 desc: 'Developing custom CI/CD pipelines and backend logic that remove friction from creative production and data management.',
                 cta: 'EXPLORE CORE',
+                to: '/work',
               },
               {
                 icon: 'rocket_launch',
@@ -173,6 +174,7 @@ export default function Home() {
                 title: 'Frontend Development',
                 desc: 'Building hyper-performant, responsive interfaces using modern frameworks. Focused on motion design and state synchronization.',
                 cta: 'VIEW COMPONENTS',
+                to: '/work',
               },
               {
                 icon: 'architecture',
@@ -182,9 +184,10 @@ export default function Home() {
                 title: 'Technical Direction',
                 desc: 'Strategic oversight for complex digital projects. Mapping out technical stacks that scale with your artistic vision.',
                 cta: 'READ CASE STUDIES',
+                to: '/about',
               },
             ].map((service, i) => (
-              <div key={i} className="p-7 hover:bg-[#f3f4f5] dark:hover:bg-[#282a2e] transition-colors group">
+              <Link key={i} to={service.to} className="p-7 hover:bg-[#f3f4f5] dark:hover:bg-[#282a2e] transition-colors group block">
                 <div className={`mb-6 inline-flex p-3 ${service.color}`}>
                   <span className={`material-symbols-outlined text-[32px] ${service.iconColor}`}>{service.icon}</span>
                 </div>
@@ -198,7 +201,7 @@ export default function Home() {
                   <span>{service.cta}</span>
                   <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -263,9 +266,9 @@ export default function Home() {
             <p className="font-['Geist',sans-serif] text-white/70 mb-5 text-[14px]">
               Latest thoughts on AI and human-centered design.
             </p>
-            <a className="font-['JetBrains_Mono'] text-[#7df4ff] text-[12px] border-b border-[#7df4ff] pb-1 uppercase tracking-widest" href="#">
+            <Link className="font-['JetBrains_Mono'] text-[#7df4ff] text-[12px] border-b border-[#7df4ff] pb-1 uppercase tracking-widest hover:opacity-80 transition-opacity" to="/dispatch">
               READ DISPATCH_08
-            </a>
+            </Link>
           </div>
         </div>
       </section>

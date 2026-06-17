@@ -121,7 +121,7 @@ export default function Contact() {
                 { icon: 'terminal', label: 'Source Code', value: 'GitHub / creative-tech', accent: 'border-[#006877] dark:border-[#00dbe9]', iconColor: 'text-[#006877] dark:text-[#00dbe9]' },
                 { icon: 'share', label: 'Professional Network', value: 'LinkedIn / creative-tech-lead', accent: 'border-[#a90097] dark:border-[#ff24e4]', iconColor: 'text-[#a90097] dark:text-[#fface8]' },
               ].map(({ icon, label, value, accent, iconColor }) => (
-                <a key={icon} className={`flex items-center gap-4 p-4 bg-white dark:bg-[#111318] border border-[#e1e3e4] dark:border-[#3b494b] hover:${accent} transition-colors group/link`} href="#">
+                <a key={icon} className={`flex items-center gap-4 p-4 bg-white dark:bg-[#111318] border border-[#e1e3e4] dark:border-[#3b494b] hover:${accent} transition-colors group/link`} href={icon === 'terminal' ? 'https://github.com/hriday880' : 'https://linkedin.com'} target="_blank" rel="noopener noreferrer">
                   <div className="w-10 h-10 flex items-center justify-center bg-[#edeeef] dark:bg-[#1e2024] group-hover/link:bg-[#00e0ff]/20 dark:group-hover/link:bg-[#00dbe9]/10 transition-colors flex-shrink-0">
                     <span className={`material-symbols-outlined ${iconColor}`}>{icon}</span>
                   </div>
